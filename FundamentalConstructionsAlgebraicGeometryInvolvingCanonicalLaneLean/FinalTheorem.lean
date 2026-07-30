@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import FundamentalConstructionsAlgebraicGeometryInvolvingCanonicalLaneLean.BirationalMaps
+import FundamentalConstructionsAlgebraicGeometryInvolvingCanonicalLaneLean.SheafOfRings
+import FundamentalConstructionsAlgebraicGeometryInvolvingCanonicalLaneLean.SchemesAffine
+import FundamentalConstructionsAlgebraicGeometryInvolvingCanonicalLaneLean.ProjectiveVarieties
+
+namespace HautevilleHouse
+namespace FundamentalConstructionsAlgebraicGeometryInvolvingCanonicalLaneLean
+
+def ConstrainedAlgebraicGeometryClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_algebraic_geometry_endgame (A : AdmissibleClass) :
+    ConstrainedAlgebraicGeometryClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end FundamentalConstructionsAlgebraicGeometryInvolvingCanonicalLaneLean
+end HautevilleHouse
